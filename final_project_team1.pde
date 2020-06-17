@@ -8,7 +8,7 @@ import picking.*;
 Picker picker;
 
 // final boolean MARKER_TRACKER_DEBUG = false;
-boolean MARKER_TRACKER_DEBUG = true;
+boolean MARKER_TRACKER_DEBUG = false;
 
 final boolean BALL_DEBUG = false;
 
@@ -118,8 +118,8 @@ void setupButton(){
   circleHighlight = color(204);
   baseColor = color(102);
   currentColor = baseColor;
-  circleX = opencv.width/2+circleSize/2;
-  circleY = opencv.height/2;
+  circleX = 0;
+  circleY = 0;
   ellipseMode(CENTER);
 }
 

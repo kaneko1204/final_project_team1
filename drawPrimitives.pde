@@ -95,13 +95,13 @@ void drawWisker(float s,float l) {
 }
 
 void drawMole(float s, int state) {
-    pushMatrix();
-      translate(0, 0, -s/2);
-      noFill();
-      strokeWeight(2);
-      stroke(0,255,255);
-      box(s);
-    popMatrix();
+    // pushMatrix();
+    //   translate(0, 0, -s/2);
+    //   noFill();
+    //   strokeWeight(2);
+    //   stroke(0,255,255);
+    //   box(s);
+    // popMatrix();
 
     // body
     pushMatrix();
