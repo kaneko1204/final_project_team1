@@ -77,6 +77,7 @@ boolean spressed = false;
 // Circle button setup to start the game
 // from https://processing.org/examples/button.html
 int circleX, circleY;  // Position of circle button
+int displayCircleX, displayCircleY;
 int circleSize = 93;   // Diameter of circle
 color circleColor, baseColor;
 color circleHighlight;
@@ -118,8 +119,10 @@ void setupButton(){
   circleHighlight = color(204);
   baseColor = color(102);
   currentColor = baseColor;
-  circleX = 0;
-  circleY = 0;
+  circleX = opencv.width/2+circleSize/2;
+  circleY = opencv.height/2;
+  displayCircleX = 0;
+  displayCircleY = 0;
   ellipseMode(CENTER);
 }
 
@@ -216,14 +219,14 @@ void draw() {
     // TODO can someone help to make an ellipse appear to indicate button presence
     strokeWeight(3);
     stroke(255, 255, 255);
-    ellipse(circleX, circleY, circleSize, circleSize);
+    ellipse(displayCircleX, displayCircleY, circleSize, circleSize);
 
     println("In calibration case");
 
     println("Number of Markers detected in this calibration:" + markers.size());
 
-    // if(mousePressed == true && circleOver){
-    if (key == ENTER && markers.size() > 0) {
+    if(circleOver && mousePressed == true  ){
+    // if (key == ENTER && markers.size() > 0) {
       gameState = new GameState(markers);
       println("finish calibration");
       calibration_boolean = true;
